@@ -1,6 +1,6 @@
 # TensorFlow-Quantum
 
-<img src='https://github.com/mohd-faizy/TensorFlow-Quantum/blob/main/TF-Q.png/01_TF-Q.png'>
+<img src='https://github.com/mohd-faizy/Quantam-Machine-Learning/blob/main/TensorFlow-Quantum/TF-Q.png/01_TF-Q.png'>
 
 TensorFlow Quantum (TFQ) is a Python framework for quantum machine learning. As an application framework, TFQ allows quantum algorithm researchers and ML application researchers to leverage Google’s quantum computing frameworks, all from within TensorFlow.
 
@@ -34,7 +34,7 @@ The second concept to introduce is hybrid quantum-classical models. __TFQ__ cont
 ## __TFQ white paper__
 [Click here](https://arxiv.org/abs/2003.02989)
 
-<img src='https://github.com/mohd-faizy/TensorFlow-Quantum/blob/main/TF-Q.png/02_TF-Q-P.png'>
+<img src='https://github.com/mohd-faizy/Quantam-Machine-Learning/blob/main/TensorFlow-Quantum/TF-Q.png/02_TF-Q-P.png'>
 
 ## __How TFQ works__
 
