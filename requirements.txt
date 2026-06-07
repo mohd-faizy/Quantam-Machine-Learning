@@ -1,0 +1,14 @@
+# Core scientific stack
+numpy
+matplotlib
+sympy
+
+# Quantum SDKs
+qiskit
+pennylane
+cirq
+
+# TensorFlow Quantum stack
+# TensorFlow Quantum currently documents TensorFlow 2.18.1 and Python 3.10-3.12 support.
+tensorflow==2.18.1
+tensorflow-quantum==0.7.6

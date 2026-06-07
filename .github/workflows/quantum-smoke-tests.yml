@@ -1,0 +1,25 @@
+name: Quantum smoke tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Parse Python examples
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+
+          paths = list(Path("Quantum-Algorithms").rglob("*.py")) + list(Path("quantum_code_lab").rglob("*.py"))
+          for path in paths:
+              ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+          print(f"AST syntax OK: {len(paths)} files")
+          PY
