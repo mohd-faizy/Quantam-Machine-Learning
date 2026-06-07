@@ -15,6 +15,8 @@ Hybrid classical-quantum systems are the dominant near-term pattern. A classical
 ```text
 Quantum-Algorithms/      Algorithm notes, math, circuits, and examples
 quantum_code_lab/        Runnable Python examples and demos
+IBM-Qiskit/              Beginner-friendly Qiskit learning track
+TensorFlow-Quantum/      TensorFlow Quantum beginner track
 credentials/             Course certificates and learning record
 .github/workflows/       CI checks for Python examples
 ```
@@ -118,11 +120,21 @@ The [quantum code lab](quantum_code_lab/) includes:
 - `vqe_molecule_simulation.py`
 - `cli.py`
 
+The [TensorFlow Quantum](TensorFlow-Quantum/) folder has a separate beginner track:
+
+- `01_cirq_circuit_basics.py`
+- `02_tfq_circuit_tensor.py`
+- `03_expectation_layer.py`
+- `04_pqc_layer.py`
+- `05_tiny_quantum_classifier.py`
+- `06_data_reuploading_circuit.py`
+
 Run a demo:
 
 ```bash
 python quantum_code_lab/grover_search.py
 python quantum_code_lab/cli.py grover
+python TensorFlow-Quantum/04_pqc_layer.py
 ```
 
 Install the unified quantum/QML stack:
@@ -152,7 +164,7 @@ Most examples are small by design so they run on laptops and CI. Hardware tables
 
 | Introduction to Quantum Computing | Quantum Mechanics |
 | :---: | :---: |
-| [![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg)](credentials/quantum_course_certificates.md#introduction-to-quantum-computing) | [![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg)](credentials/quantum_course_certificates.md#quantum-mechanics) |
+| ![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg) | ![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg) |
 
 ## Major Quantum Research Papers
 

@@ -11,7 +11,7 @@ def run_vqe(steps: int = 40, learning_rate: float = 0.15) -> tuple[float, float]
         raise SystemExit("Install PennyLane: pip install pennylane") from exc
 
     dev = qml.device("default.qubit", wires=1)
-    hamiltonian = qml.Hamiltonian([1.0, -0.5], [qml.PauliZ(0), qml.PauliX(0)])
+    hamiltonian = qml.LinearCombination([1.0, -0.5], [qml.PauliZ(0), qml.PauliX(0)])
 
     @qml.qnode(dev)
     def energy(theta):

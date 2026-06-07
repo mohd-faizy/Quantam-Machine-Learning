@@ -14,8 +14,10 @@ def build_circuit():
     qc.cx(0, 1)
     qc.h(0)
     qc.measure([0, 1], [0, 1])
-    qc.x(2).c_if(qc.clbits[1], 1)
-    qc.z(2).c_if(qc.clbits[0], 1)
+    with qc.if_test((qc.clbits[1], 1)):
+        qc.x(2)
+    with qc.if_test((qc.clbits[0], 1)):
+        qc.z(2)
     return qc
 
 
