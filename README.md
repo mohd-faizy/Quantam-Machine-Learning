@@ -21,6 +21,19 @@ credentials/             Course certificates and learning record
 .github/workflows/       CI checks for Python examples
 ```
 
+## What You Can Learn Here
+
+| Track | Start here | Outcome |
+|---|---|---|
+| Quantum foundations | `Quantum-Algorithms/README.md` | Qubits, gates, measurement, entanglement, Dirac notation, and circuit intuition. |
+| Core algorithms | `Quantum-Algorithms/*/README.md` | Grover, Shor, QFT, Simon, Deutsch-Jozsa, Bernstein-Vazirani, teleportation, and entanglement. |
+| Qiskit practice | `IBM-Qiskit/` | Beginner-friendly IBM/Qiskit 2.x circuits, Bell states, teleportation, Grover, and QFT. |
+| TensorFlow Quantum | `TensorFlow-Quantum/README.md` | Cirq circuits as tensors, expectation layers, PQC layers, and a small quantum classifier. |
+| QML experiments | `quantum_code_lab/` | PennyLane VQC, VQE toy models, TensorFlow classifiers, TFQ circuits, and SymPy math helpers. |
+| Research reading | `README.md#major-quantum-research-papers` | Major papers with direct links and short notes. |
+| Hardware literacy | `README.md#global-quantum-landscape` | Who is building quantum computers, what architecture they use, and what they are trying to prove. |
+```
+
 ## Quantum Companies and 2026 Progress Report
 
 Hardware numbers change quickly. Counts below use public information available around June 2026 and should be read as public device scale, not proof of practical advantage.
@@ -38,6 +51,48 @@ Hardware numbers change quickly. Counts below use public information available a
 | Quantinuum | H2 series | 56 | Trapped ion | All-to-all connectivity, high quantum volume, and production H-Series access. |
 
 Sources: [IBM Quantum technology](https://www.ibm.com/quantum/technology/), [IBM Nighthawk announcement](https://quantum.cloud.ibm.com/announcements/en/product-updates/2026-01-05-nighthawk), [Google Willow announcement](https://blog.google/technology/ai/google-ai-updates-december-2024/), [D-Wave Advantage2](https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available), [IonQ Forte](https://www.ionq.com/quantum-systems/forte), [Rigetti Cepheus on Braket](https://www.rigetti.com/news/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device), [Xanadu Aurora](https://www.xanadu.ai/press/xanadu-introduces-aurora-worlds-first-scalable-networked-and-modular-quantum-computer), [Amazon Braket providers](https://aws.amazon.com/braket/hardware-providers/), [Quantinuum H2 reference](https://docs.quantinuum.com/systems/support/system_reference.html), [Microsoft Quantum hardware](https://quantum.microsoft.com/en-us/solutions/azure-quantum-hardware).
+
+## Global Quantum Landscape
+
+Quantum computing is developing through several hardware paths at once. Superconducting systems push fast gates and chip fabrication; trapped ions emphasize connectivity and coherence; neutral atoms scale through arrays; photonics targets networking and fault-tolerant architectures; annealers focus on optimization; silicon spin qubits aim for semiconductor-style manufacturing.
+
+| Organization | Country/region | Approach | What they are doing | Why it matters |
+|---|---|---|---|---|
+| IBM Quantum | United States | Superconducting gate model | Heron/Nighthawk processors, Qiskit Runtime, quantum-centric supercomputing, and fault-tolerance roadmap. | Strong public stack for learning, cloud experiments, and algorithm development. |
+| Google Quantum AI | United States | Superconducting gate model | Sycamore/Willow-line processors and surface-code error-correction demonstrations. | Major benchmark and error-correction research driver. |
+| Microsoft Azure Quantum | United States/global | Cloud platform plus topological research | Partner QPU access, chemistry/optimization tools, and Majorana/topoconductor research. | Connects cloud workflows with a long-term topological qubit bet. |
+| Amazon Braket | United States/global | Managed quantum cloud | Access to multiple hardware providers and simulators through one service. | Useful for comparing architectures and running hybrid jobs. |
+| IonQ | United States | Trapped ions | Forte-class systems, quantum networking/security, and vertical integration plans. | High-connectivity trapped-ion systems are strong for compact circuits. |
+| Quantinuum | United States/United Kingdom | Trapped ions | H-Series hardware, all-to-all connectivity, compilers, and enterprise software. | High-quality trapped-ion platform for research and enterprise pilots. |
+| D-Wave | Canada | Quantum annealing | Advantage2 annealers and hybrid QUBO/Ising optimization solvers. | Most mature commercial annealing ecosystem. |
+| Xanadu | Canada | Photonic quantum computing | Borealis/Aurora photonic systems and PennyLane software. | Links photonic hardware research with a major QML programming framework. |
+| Rigetti | United States | Superconducting processors | Aspen/Ankaa/Cepheus-line processors and modular superconducting systems. | Independent superconducting hardware provider in cloud ecosystems. |
+| QuEra | United States | Neutral atoms | Neutral-atom systems for analog simulation, gate-model work, and error-correction experiments. | Neutral atoms are one of the strongest scaling paths. |
+| Atom Computing | United States | Neutral atoms | Large atom arrays and logical-qubit collaborations. | Demonstrates the scale potential of neutral-atom platforms. |
+| PsiQuantum | United States/United Kingdom/Australia | Photonic fault-tolerant architecture | Photonic systems aimed at fault-tolerant scale using semiconductor manufacturing. | Long-term bet on a large, fault-tolerant photonic machine. |
+| IQM Quantum Computers | Finland/EU | Superconducting processors | On-prem and cloud-connected QPUs for European HPC and research centers. | Important European superconducting hardware company. |
+| Pasqal | France | Neutral atoms | Neutral-atom processors for simulation, optimization, and HPC integration. | Strong European neutral-atom platform. |
+| Alice & Bob | France | Cat qubits | Bosonic cat qubits designed to reduce error-correction overhead. | Distinctive hardware-efficient route toward fault tolerance. |
+| Quandela | France | Photonic processors | Photonic quantum processors and cloud access. | European photonic hardware and education platform. |
+| Oxford Quantum Circuits | United Kingdom | Superconducting processors | Coaxmon-style superconducting QPUs available through cloud services. | UK-based hardware option in the managed quantum cloud ecosystem. |
+| Universal Quantum | United Kingdom/Germany | Trapped ions | Modular trapped-ion architecture. | Engineering-focused path toward large ion-trap machines. |
+| planqc | Germany | Neutral atoms | Optical-lattice neutral-atom processors and HPC-linked projects. | European route to large neutral-atom systems. |
+| AQT | Austria | Trapped ions | Compact trapped-ion systems and cloud access. | Useful for education, research access, and European ion-trap development. |
+| Diraq | Australia | Silicon spin qubits | CMOS-compatible spin-qubit hardware. | Targets semiconductor-style qubit manufacturing. |
+| Silicon Quantum Computing | Australia | Silicon quantum dots / donor spin qubits | Atomic-scale silicon quantum devices. | Long-term silicon route with tight hardware control. |
+| Origin Quantum | China | Superconducting processors | Origin Wukong, a 72-qubit superconducting cloud-accessible system, plus AI-assisted usability work. | One of China’s most visible domestic quantum hardware companies. |
+| USTC / CAS research ecosystem | China | Superconducting, photonic, communication | Zuchongzhi superconducting work, Jiuzhang photonic demonstrations, quantum satellites, and quantum networks. | Central to China’s quantum advantage demonstrations and national infrastructure. |
+| China Telecom Quantum Group / QuantumCTek | China | Quantum cloud, QKD, secure networks | Tianyan quantum cloud, quantum communication infrastructure, and domestic quantum services. | Shows China’s push to combine quantum computing, cloud access, and secure communication. |
+| SpinQ | China | NMR desktop quantum computers | Small room-temperature educational quantum computers. | Practical for teaching and hands-on demonstrations. |
+| CAS Cold Atom Technology | China | Neutral atoms | Hanyuan-series neutral-atom systems, including 2026 dual-core claims. | Indicates China’s work beyond superconducting and photonic systems. |
+| QpiAI | India | Superconducting hardware plus AI/quantum software | QpiAI-Indus/Kaveri processors, quantum error-correction decoder work, and enterprise AI-quantum tools. | One of India’s most visible full-stack quantum startups. |
+| C-DAC | India | Hybrid HPC-quantum infrastructure | Ordered a 108-qubit Rigetti superconducting system for deployment in India. | Important step toward domestic quantum hardware access tied to Indian HPC. |
+| National Quantum Mission | India | National program | Funding quantum computing, communication, sensing, materials, startups, and hubs. | Anchors India’s public quantum strategy and ecosystem building. |
+| QNu Labs | India | Quantum-safe security and QKD | Builds QKD and quantum-safe cybersecurity products. | Important for quantum communication and security adoption. |
+| BosonQ Psi | India | Quantum software and simulation | Engineering simulation, quantum-inspired workflows, and application software. | Represents India’s software/application layer beyond hardware. |
+| TCS, Infosys, Wipro, HCLTech | India | Enterprise quantum services | Optimization, finance, chemistry, security, and cloud quantum pilots. | Large IT-services firms can bring quantum workflows into enterprise adoption. |
+
+Additional sources for India and China: [QpiAI QEC announcement](https://www.qpiai.tech/pressreleases/2026-03-25-qpiai-achieves-high-speed-quantum-error-correction-on-superconducting-systems-with-new-decoder-platform), [Rigetti/C-DAC 108-qubit order](https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-order-108-qubit-quantum-computer-indias-centre), [India ecosystem overview](https://entangledfuture.com/india/), [QpiAI newsroom](https://qpiai.tech/newsroom), [Origin Wukong government report](https://english.www.gov.cn/news/202502/16/content_WS67b1d60cc6d0868f4e8efaf2.html), and [Origin Wukong AI capability report](https://english.scio.gov.cn/m/chinavoices/2026-04/22/content_118451440.html).
 
 ## Quantum Processors Map 2026
 
@@ -129,12 +184,24 @@ The [TensorFlow Quantum](TensorFlow-Quantum/) folder has a separate beginner tra
 - `05_tiny_quantum_classifier.py`
 - `06_data_reuploading_circuit.py`
 
+The [IBM Qiskit](IBM-Qiskit/) folder is a beginner-friendly Qiskit 2.x learning track:
+
+- `01_single_qubit_gates.py`
+- `02_multi_qubit_gates.py`
+- `03_bell_states.py`
+- `04_quantum_teleportation.py`
+- `05_bernstein_vazirani.py`
+- `06_deutsch_jozsa.py`
+- `07_grover_search.py`
+- `08_qft_circuit.py`
+
 Run a demo:
 
 ```bash
 python quantum_code_lab/grover_search.py
 python quantum_code_lab/cli.py grover
 python TensorFlow-Quantum/04_pqc_layer.py
+python IBM-Qiskit/03_bell_states.py
 ```
 
 Install the unified quantum/QML stack:
