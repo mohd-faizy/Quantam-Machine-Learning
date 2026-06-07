@@ -62,6 +62,7 @@ Quantum-Algorithms/      Algorithm notes, math, circuits, and examples
 quantum_code_lab/        Runnable Python examples and demos
 IBM-Qiskit/              Beginner-friendly Qiskit learning track
 TensorFlow-Quantum/      TensorFlow Quantum beginner track
+PyTorch-Quantum/         PyTorch-based QML simulation and examples
 assets/                  Course certificates, images, and learning record
 .github/workflows/       CI checks for Python examples
 ```
@@ -75,6 +76,7 @@ assets/                  Course certificates, images, and learning record
 | Core algorithms | `Quantum-Algorithms/*/README.md` | Grover, Shor, QFT, Simon, Deutsch-Jozsa, Bernstein-Vazirani, teleportation, and entanglement. |
 | Qiskit practice | `IBM-Qiskit/` | Beginner-friendly IBM/Qiskit 2.x circuits, Bell states, teleportation, Grover, and QFT. |
 | TensorFlow Quantum | `TensorFlow-Quantum/README.md` | Cirq circuits as tensors, expectation layers, PQC layers, and a small quantum classifier. |
+| PyTorch Quantum | `PyTorch-Quantum/README.md` | First-principles simulation using autograd and legacy torchquantum reference syntax. |
 | QML experiments | `quantum_code_lab/` | PennyLane VQC, VQE toy models, TensorFlow classifiers, TFQ circuits, and SymPy math helpers. |
 | Research reading | `README.md#major-quantum-research-papers` | Major papers with direct links and short notes. |
 | Hardware literacy | `README.md#global-quantum-landscape` | Who is building quantum computers, what architecture they use, and what they are trying to prove. |
@@ -161,15 +163,6 @@ Additional sources for India and China: [QpiAI QEC announcement](https://www.qpi
 ![Quantum Circuit Flow](assets/q-cricuit.png)
 *Quantum circuit execution and computational flow.*
 
-## Reference Guides
-
-### Quantum Computing 
-![Quantum Computing Reference](assets/q-cs.png)
-*Quantum computing gates, operations, and notation reference.*
-
-### Quantum Mechanics 
-![Quantum Mechanics Reference](assets/qm-cs.png)
-*Quantum mechanics postulates, state vectors, and operators reference.*
 
 ## Learning Tracks
 
@@ -194,39 +187,49 @@ Additional sources for India and China: [QpiAI QEC announcement](https://www.qpi
 
 ## Code Base
 
-The [quantum code lab](quantum_code_lab/) includes:
+### [Quantum Code Lab](quantum_code_lab/)
+| File | Framework | Brief Description |
+| :--- | :--- | :--- |
+| `cli.py` | Python | Central CLI entry-point to run any quantum code lab demo. |
+| `basic_quantum_circuits.py` | Qiskit | Standard qubit superposition and measurement circuit drawing. |
+| `bell_states.py` | Qiskit | Builds and prints all 4 maximally entangled Bell states. |
+| `quantum_fourier_transform.py`| Qiskit | General iterative Quantum Fourier Transform circuit drawing. |
+| `grover_search.py` | Qiskit | Standard 2-qubit Grover search circuit drawing. |
+| `shor_algorithm_demo.py` | Python | Classical period-finding order simulation for factoring 15. |
+| `qml_hybrid_model.py` | PennyLane | Differentiable variational classifier with classical inputs. |
+| `vqe_molecule_simulation.py` | PennyLane | Variational Quantum Eigensolver single-qubit toy energy optimizer. |
+| `tensorflow_quantum_pqc.py` | TFQ/Cirq | Parameterized quantum circuit layer prediction reference. |
+| `tensorflow_classifier.py` | Keras | Classical neural network reference trained on the XOR problem. |
+| `sympy_quantum_math.py` | SymPy | Symbolic verification of Grover search rotation parameters. |
 
-- `basic_quantum_circuits.py`
-- `bell_states.py`
-- `quantum_fourier_transform.py`
-- `grover_search.py`
-- `shor_algorithm_demo.py`
-- `qml_hybrid_model.py`
-- `tensorflow_classifier.py`
-- `tensorflow_quantum_pqc.py`
-- `sympy_quantum_math.py`
-- `vqe_molecule_simulation.py`
-- `cli.py`
+### [TensorFlow Quantum](TensorFlow-Quantum/)
+| File | Framework | Brief Description |
+| :--- | :--- | :--- |
+| `01_cirq_circuit_basics.py` | Cirq | Creates, simulates, and draws basic qubit circuits in Cirq. |
+| `02_tfq_circuit_tensor.py` | TFQ/Cirq | Serializes Cirq quantum circuits to Keras-feedable tensors. |
+| `03_expectation_layer.py` | TFQ/Cirq | Measures Pauli expectation values from circuit inputs in TF. |
+| `04_pqc_layer.py` | TFQ/Cirq | Defines a trainable Keras PQC quantum layer. |
+| `05_tiny_quantum_classifier.py`| TFQ/Cirq | Trains a simple binary classifier over two circuit classes. |
+| `06_data_reuploading_circuit.py`| TFQ/Cirq | Maps coordinates to circuit weights via data re-uploading. |
 
-The [TensorFlow Quantum](TensorFlow-Quantum/) folder has a separate beginner track:
+### [IBM Qiskit](IBM-Qiskit/)
+| File | Framework | Brief Description |
+| :--- | :--- | :--- |
+| `01_single_qubit_gates.py` | Qiskit | Demonstrates core single-qubit rotations ($H, X, Y, Z, S, T$). |
+| `02_multi_qubit_gates.py` | Qiskit | Demonstrates entangling multi-qubit gates ($CNOT, CZ, CCX, SWAP$). |
+| `03_bell_states.py` | Qiskit | Builds and simulates all 4 Bell states using statevector samplers. |
+| `04_quantum_teleportation.py` | Qiskit | State transfer using Qiskit 2.x `if_test` conditional execution. |
+| `05_bernstein_vazirani.py` | Qiskit | Bernstein-Vazirani hidden bitstring recovery with simulation. |
+| `06_deutsch_jozsa.py` | Qiskit | Deutsch-Jozsa constant vs. balanced query classification. |
+| `07_grover_search.py` | Qiskit | 2-qubit Grover search circuit construction and execution. |
+| `08_qft_circuit.py` | Qiskit | n-qubit Quantum Fourier Transform and Inverse QFT builder. |
 
-- `01_cirq_circuit_basics.py`
-- `02_tfq_circuit_tensor.py`
-- `03_expectation_layer.py`
-- `04_pqc_layer.py`
-- `05_tiny_quantum_classifier.py`
-- `06_data_reuploading_circuit.py`
-
-The [IBM Qiskit](IBM-Qiskit/) folder is a beginner-friendly Qiskit 2.x learning track:
-
-- `01_single_qubit_gates.py`
-- `02_multi_qubit_gates.py`
-- `03_bell_states.py`
-- `04_quantum_teleportation.py`
-- `05_bernstein_vazirani.py`
-- `06_deutsch_jozsa.py`
-- `07_grover_search.py`
-- `08_qft_circuit.py`
+### [PyTorch Quantum](PyTorch-Quantum/)
+| File | Framework | Brief Description |
+| :--- | :--- | :--- |
+| `01_pytorch_statevector.py` | PyTorch | First-principles 2-qubit statevector simulator trained to prepare Bell states. |
+| `02_torchquantum_vqc.py` | torchquantum | Legacy QNN code structure with fallback virtual environment diagnostics. |
+| `03_hybrid_quantum_classifier.py` | PyTorch | Hybrid classical MLP + quantum circuit to classify non-linear XOR data. |
 
 Run a demo:
 
@@ -235,6 +238,8 @@ python quantum_code_lab/grover_search.py
 python quantum_code_lab/cli.py grover
 python TensorFlow-Quantum/04_pqc_layer.py
 python IBM-Qiskit/03_bell_states.py
+python PyTorch-Quantum/01_pytorch_statevector.py
+python PyTorch-Quantum/03_hybrid_quantum_classifier.py
 ```
 
 Install the unified quantum/QML stack:
@@ -292,6 +297,17 @@ This reading list uses source links and short notes so it stays lightweight and 
 | Evidence for the Utility of Quantum Computing Before Fault Tolerance | 2023 | NISQ utility | [DOI](https://doi.org/10.1038/s41586-023-06096-3) | IBM error-mitigated experiments arguing for useful pre-fault-tolerant quantum computation. |
 | Logical Quantum Processor Based on Reconfigurable Atom Arrays | 2023 | Neutral atoms/error correction | [DOI](https://doi.org/10.1038/s41586-023-06927-3) | Logical-qubit operations and error-correction primitives with reconfigurable neutral atoms. |
 | Quantum Error Correction Below the Surface Code Threshold | 2024 | Error correction | [DOI](https://doi.org/10.1038/s41586-024-08449-y) | Google Willow result showing improved logical behavior as code distance increases. |
+
+## Reference Guides
+
+### Quantum Computing 
+![Quantum Computing Reference](assets/q-cs.png)
+*Quantum computing gates, operations, and notation reference.*
+
+### Quantum Mechanics 
+![Quantum Mechanics Reference](assets/qm-cs.png)
+*Quantum mechanics postulates, state vectors, and operators reference.*
+
 ## Certificates
 
 | Introduction to Quantum Computing | Quantum Mechanics |

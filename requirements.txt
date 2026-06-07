@@ -11,3 +11,9 @@ cirq
 # TensorFlow Quantum stack (requires Python 3.10-3.12)
 tensorflow==2.18.1
 tensorflow-quantum==0.7.6
+
+# PyTorch Quantum simulation stack
+torch
+# Note: MIT torchquantum is not included here because of strict legacy
+# dependencies (Qiskit < 1.0, Python < 3.12) that conflict with modern setups.
+# See PyTorch-Quantum/README.md for setup instructions in a legacy virtual environment.
