@@ -1,6 +1,50 @@
-# Quantum Computing, Quantum Machine Learning, and Quantum Algorithms
+<div align="center">
 
-An open, executable learning hub for quantum computing, quantum machine learning (QML), quantum algorithms, hardware progress, and research literacy. Each major algorithm includes theory, math, implementation, and visualization material, while the code lab provides runnable examples for `Qiskit`, `PennyLane`, `Cirq`, TensorFlow Quantum, and hybrid workflows.
+  <h1>⚛️ Quantum Machine Learning</h1>
+
+  <p>
+    <b>An open, executable learning hub for quantum computing, quantum machine learning (QML), quantum algorithms, hardware progress, and research.</b>
+  </p>
+
+  <!-- Badges -->
+  <p>
+    <a href="https://github.com/mohd-faizy/Quantam-Machine-Learning/blob/main/LICENSE">
+      <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License" />
+    </a>
+    <a href="https://github.com/mohd-faizy/Quantam-Machine-Learning/stargazers">
+      <img src="https://img.shields.io/github/stars/mohd-faizy/Quantam-Machine-Learning?style=for-the-badge&logo=github&color=D97706" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/mohd-faizy/Quantam-Machine-Learning/network/members">
+      <img src="https://img.shields.io/github/forks/mohd-faizy/Quantam-Machine-Learning?style=for-the-badge&logo=github&color=2563EB" alt="GitHub Forks" />
+    </a>
+    <a href="https://github.com/mohd-faizy/Quantam-Machine-Learning">
+      <img src="https://img.shields.io/github/repo-size/mohd-faizy/Quantam-Machine-Learning?style=for-the-badge&color=0EA5E9" alt="Repository Size" />
+    </a>
+    <a href="https://github.com/mohd-faizy/Quantam-Machine-Learning/commits/main">
+      <img src="https://img.shields.io/github/last-commit/mohd-faizy/Quantam-Machine-Learning?style=for-the-badge&color=10B981" alt="Last Commit" />
+    </a>
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    <a href="https://github.com/qiskit-community/qiskit-metapackage">
+      <img src="https://img.shields.io/badge/Qiskit-2.x-60297B?style=for-the-badge&logo=qiskit&logoColor=white" alt="Qiskit" />
+    </a>
+    <a href="https://github.com/PennyLaneAI/pennylane">
+      <img src="https://img.shields.io/badge/PennyLane-0.39%2B-1976D2?style=for-the-badge&logoColor=white" alt="PennyLane" />
+    </a>
+    <a href="https://github.com/quantumlib/Cirq">
+      <img src="https://img.shields.io/badge/Cirq-Google-green?style=for-the-badge&logoColor=white" alt="Cirq" />
+    </a>
+    <a href="https://github.com/tensorflow/quantum">
+      <img src="https://img.shields.io/badge/TensorFlow_Quantum-TFQ-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow Quantum" />
+    </a>
+  </p>
+
+  <br/>
+
+</div>
+
+---
 
 ## Overview
 
@@ -226,11 +270,6 @@ Prefer diagrams and plots that can be edited or regenerated:
 
 Most examples are small by design so they run on laptops and CI. Hardware tables are public snapshots, not vendor benchmarks. QML examples are educational demonstrations and should not be interpreted as proven speedups.
 
-## Certificates
-
-| Introduction to Quantum Computing | Quantum Mechanics |
-| :---: | :---: |
-| ![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg) | ![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg) |
 
 ## Major Quantum Research Papers
 
@@ -264,6 +303,39 @@ This reading list uses source links and short notes so it stays lightweight and 
 | Logical Quantum Processor Based on Reconfigurable Atom Arrays | 2023 | Neutral atoms/error correction | [DOI](https://doi.org/10.1038/s41586-023-06927-3) | Logical-qubit operations and error-correction primitives with reconfigurable neutral atoms. |
 | Quantum Error Correction Below the Surface Code Threshold | 2024 | Error correction | [DOI](https://doi.org/10.1038/s41586-024-08449-y) | Google Willow result showing improved logical behavior as code distance increases. |
 
+## Certificates
+
+| Introduction to Quantum Computing | Quantum Mechanics |
+| :---: | :---: |
+| ![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg) | ![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg) |
+
 ## License
 
 This repository is released under the existing [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+## 🌐 Connect with Me
+
+  <p>
+    <a href="https://twitter.com/F4izy">
+      <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
+    </a>
+    <a href="https://www.linkedin.com/in/mohd-faizy/">
+      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    </a>
+    <a href="https://github.com/mohd-faizy">
+      <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+    </a>
+  </p>
+
+  <p>
+    <sub>
+      ⭐ If this repository helped you, please star it<br/>
+      Made by <a href="https://github.com/mohd-faizy"><b>mohd-faizy</b></a>
+    </sub>
+  </p>
+
+</div>
