@@ -1,16 +1,10 @@
-# TensorFlow Quantum
+# TensorFlow Quantum (TFQ)
 
-TensorFlow Quantum (TFQ) lets you use Cirq quantum circuits inside TensorFlow/Keras models. It is useful when you want a familiar deep-learning workflow, but the model includes a parameterized quantum circuit.
+This module demonstrates how to construct, execute, and train hybrid classical-quantum models by integrating **Google Cirq** circuits directly inside **TensorFlow/Keras** pipelines.
 
-## Setup
+## 1. Setup & Environment Pinned Stack
 
-Install the repository dependencies from the project root:
-
-```bash
-pip install -r requirements.txt
-```
-
-The pinned stack in this repository uses:
+TensorFlow Quantum requires a tightly coupled python environment. The pinned requirements in the repository root contain:
 
 ```text
 tensorflow==2.18.1
@@ -19,154 +13,117 @@ cirq
 sympy
 ```
 
-## Learning Path
+### Installation
+From the root of the repository, execute:
+```bash
+pip install -r requirements.txt
+```
 
-| Step | File | What it teaches |
-|---:|---|---|
-| 1 | `01_cirq_circuit_basics.py` | Build and simulate a small Cirq circuit before adding TensorFlow. |
-| 2 | `02_tfq_circuit_tensor.py` | Convert Cirq circuits into tensors that TensorFlow can pass through a model. |
-| 3 | `03_expectation_layer.py` | Measure expectation values from circuits with `tfq.layers.Expectation`. |
-| 4 | `04_pqc_layer.py` | Use `tfq.layers.PQC` as a trainable Keras layer. |
-| 5 | `05_tiny_quantum_classifier.py` | Train a minimal quantum classifier on a toy dataset. |
-| 6 | `06_data_reuploading_circuit.py` | Build a small data re-uploading ansatz with feature and weight symbols. |
+---
 
-Run an example:
+## 2. The TFQ Pipeline Mental Model
 
+In TFQ, quantum circuits are treated as Keras layers. The typical data and parameter flow follows this sequence:
+
+```
+  +--------------------------------+
+  |    Classical Input Data (x)    |
+  +--------------------------------+
+                  |
+                  v
+  +--------------------------------+
+  |  Cirq Encoding (State Prep)   |
+  +--------------------------------+
+                  |
+                  v
+  +--------------------------------+
+  |   Convert to TF String Tensor  |
+  +--------------------------------+
+                  |
+                  v
+  +--------------------------------+
+  |  tfq.layers.PQC (QNN Layer)    |
+  +--------------------------------+
+                  |
+                  v
+  +--------------------------------+
+  | Keras Loss / Parameter Update  |
+  +--------------------------------+
+```
+
+---
+
+## 3. Learning Path
+
+Follow the scripts sequentially to learn how to bridge Cirq circuits with Keras.
+
+| Step | Script File | Target Concept | What You Learn |
+| :---: | :--- | :--- | :--- |
+| **1** | [01_cirq_circuit_basics.py](01_cirq_circuit_basics.py) | Cirq Circuit Building | Creating qubits, gates, measurements, and simulators. |
+| **2** | [02_tfq_circuit_tensor.py](02_tfq_circuit_tensor.py) | Circuit Serialization | Converting Cirq objects to TensorFlow string tensors. |
+| **3** | [03_expectation_layer.py](03_expectation_layer.py) | Expectation Values | Measuring quantum observables from Keras inputs. |
+| **4** | [04_pqc_layer.py](04_pqc_layer.py) | Trainable Layers | Using `tfq.layers.PQC` as a trainable layer. |
+| **5** | [05_tiny_quantum_classifier.py](05_tiny_quantum_classifier.py)| Hybrid Classification | Training a classifier on a basic circuit dataset. |
+| **6** | [06_data_reuploading_circuit.py](06_data_reuploading_circuit.py)| Data Re-uploading | Implementing the data re-uploading QNN design pattern. |
+
+Run any script using python:
 ```bash
 python TensorFlow-Quantum/01_cirq_circuit_basics.py
-python TensorFlow-Quantum/04_pqc_layer.py
+python TensorFlow-Quantum/05_tiny_quantum_classifier.py
 ```
 
-## TFQ Cheat Sheet
+---
 
-### Core Imports
+## 4. TFQ Code Cheat Sheet
 
+### Qubit Allocations
+In Cirq, qubits are identified by spatial layout. For TFQ, `cirq.GridQubit` is preferred:
 ```python
 import cirq
-import sympy
-import tensorflow as tf
-import tensorflow_quantum as tfq
-```
-
-### Qubits
-
-```python
 q0 = cirq.GridQubit(0, 0)
 q1 = cirq.GridQubit(0, 1)
 ```
 
-Use `GridQubit` for TFQ examples because it works naturally with Cirq and Google-style circuit layouts.
-
-### Circuits
-
+### Parameterizing Circuits (SymPy Integration)
+Tunable gates are marked using symbolic variables. TensorFlow feeds numbers into these symbols during the forward and backward passes:
 ```python
-circuit = cirq.Circuit(
-    cirq.H(q0),
-    cirq.CNOT(q0, q1),
-)
-```
-
-A Cirq circuit is the quantum program. TFQ does not replace Cirq; it uses Cirq circuits as model inputs and quantum layers.
-
-### Symbols
-
-```python
+import sympy
 theta = sympy.Symbol("theta")
 circuit = cirq.Circuit(cirq.ry(theta)(q0))
 ```
 
-Symbols mark trainable or feedable parameters. TensorFlow supplies values for these symbols during model execution.
-
-### Circuit Tensors
-
+### Serializing Circuits
+Keras batches expect tensor inputs. TFQ handles this by converting Cirq circuit objects into serialized string tensors:
 ```python
-circuit_tensor = tfq.convert_to_tensor([cirq.Circuit()])
+import tensorflow_quantum as tfq
+circuit_tensor = tfq.convert_to_tensor([circuit])
 ```
 
-TFQ represents circuits as TensorFlow tensors with dtype `tf.string`. This lets Keras batches contain quantum circuits.
-
-### Observables
-
+### Defining Observables
+Observables determine what operator is measured. These are defined using Pauli products:
 ```python
-observable = cirq.Z(q0)
+observable = cirq.Z(q0) * cirq.X(q1)
 ```
 
-An observable defines what the model measures. Common choices are `cirq.Z(q)`, `cirq.X(q)`, or sums/products of Pauli operators.
+---
 
-### Expectation Layer
+## 5. Common Mistakes & Best Practices
 
-```python
-expectation = tfq.layers.Expectation()
-values = expectation(
-    circuit_tensor,
-    symbol_names=[theta],
-    symbol_values=tf.constant([[0.5]], dtype=tf.float32),
-    operators=observable,
-)
-```
+| Common Mistake | Root Cause | Recommended Fix |
+| :--- | :--- | :--- |
+| **Passing raw Cirq circuits to Keras** | Keras expects TensorFlow tensors. | Wrap circuits using `tfq.convert_to_tensor()`. |
+| **Forgetting to define SymPy symbols** | Without symbols, TFQ cannot track gradients. | Define parameters using `sympy.Symbol("theta")`. |
+| **Feeding large classical matrices directly** | Quantum states require encoding. | Build an initial feature map layer to encode inputs. |
+| **Too many qubits/gates too early** | Quantum simulation scale limits classical memory. | Keep prototype models under 4 qubits and shallow. |
 
-Use this when you want explicit control over symbols and values.
+---
 
-### PQC Layer
+## 6. Glossary of TFQ & Cirq Terms
 
-```python
-model = tf.keras.Sequential([
-    tf.keras.layers.Input(shape=(), dtype=tf.string),
-    tfq.layers.PQC(circuit, observable),
-])
-```
-
-`PQC` creates a trainable quantum layer. Keras sees it like a normal model component.
-
-## Mental Model
-
-```text
-Cirq circuit + SymPy symbols
-        |
-        v
-TFQ circuit tensor
-        |
-        v
-Quantum layer measures expectation values
-        |
-        v
-Keras loss + optimizer update parameters
-```
-
-## When To Use TensorFlow Quantum
-
-Use TFQ when:
-
-- You already know TensorFlow/Keras.
-- You want quantum circuits inside a neural-network training loop.
-- Your circuits are naturally written in Cirq.
-- You want to prototype hybrid quantum-classical models.
-
-Use Qiskit or PennyLane instead when:
-
-- You mainly want hardware-provider workflows and circuit transpilation.
-- You want very compact differentiable quantum examples.
-- You want Torch/JAX-first workflows.
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---|---|
-| Passing a Cirq circuit directly to a Keras model | Convert it with `tfq.convert_to_tensor`. |
-| Forgetting `sympy.Symbol` for parameters | Use symbols for trainable or feedable gates. |
-| Expecting TFQ to load classical arrays directly into qubits | Encode features as circuit operations first. |
-| Measuring every qubit without a reason | Start with one observable such as `cirq.Z(readout)`. |
-| Building deep circuits too early | Start with one or two qubits and shallow layers. |
-
-## Files In This Folder
-
-```text
-01_cirq_circuit_basics.py
-02_tfq_circuit_tensor.py
-03_expectation_layer.py
-04_pqc_layer.py
-05_tiny_quantum_classifier.py
-06_data_reuploading_circuit.py
-TF-Q.png/
-```
-
+* **`GridQubit` / `LineQubit`**: Qubit representations in Cirq. `GridQubit` defines qubits by 2D grid coordinates $(row, col)$, whereas `LineQubit` defines qubits sequentially in a 1D line.
+* **`sympy.Symbol`**: A mathematical variable used to label parameterized parameters in a Cirq circuit that can be updated during training.
+* **`tfq.convert_to_tensor`**: A utility function that serializes Cirq `Circuit` or `PauliSum` objects into TensorFlow string tensors.
+* **`tfq.layers.PQC`**: Parameterized Quantum Circuit layer. A Keras layer that takes circuits, outputs expectation values, and maintains trainable variables for the internal circuit parameters.
+* **`tfq.layers.Expectation`**: A TFQ layer used to compute the expectation value of operators given circuit states and parameter inputs.
+* **Pauli Observable**: An operator representing a measurement of the spin projections ($X, Y, Z$) on one or more qubits.
+* **Keras Integration**: The capability to compile, optimize, and train quantum layers using standard classical optimizers (such as Adam or RMSprop) and loss functions.

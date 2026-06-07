@@ -57,6 +57,7 @@ Hybrid classical-quantum systems are the dominant near-term pattern. A classical
 ## Repository Map
 
 ```text
+Quantum-Mechanics/       Quantum physics foundations for QC & QML
 Quantum-Algorithms/      Algorithm notes, math, circuits, and examples
 quantum_code_lab/        Runnable Python examples and demos
 IBM-Qiskit/              Beginner-friendly Qiskit learning track
@@ -69,6 +70,7 @@ credentials/             Course certificates and learning record
 
 | Track | Start here | Outcome |
 |---|---|---|
+| Quantum mechanics | `Quantum-Mechanics/README.md` | Hilbert space, Bra-Ket math, postulates, density matrices, and connections to VQCs/Kernels. |
 | Quantum foundations | `Quantum-Algorithms/README.md` | Qubits, gates, measurement, entanglement, Dirac notation, and circuit intuition. |
 | Core algorithms | `Quantum-Algorithms/*/README.md` | Grover, Shor, QFT, Simon, Deutsch-Jozsa, Bernstein-Vazirani, teleportation, and entanglement. |
 | Qiskit practice | `IBM-Qiskit/` | Beginner-friendly IBM/Qiskit 2.x circuits, Bell states, teleportation, Grover, and QFT. |
