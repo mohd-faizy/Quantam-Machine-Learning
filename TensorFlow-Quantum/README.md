@@ -74,7 +74,7 @@ python TensorFlow-Quantum/05_tiny_quantum_classifier.py
 
 ---
 
-## 4. TFQ Code Cheat Sheet
+## 4. TFQ Code Quick Reference
 
 ### Qubit Allocations
 In Cirq, qubits are identified by spatial layout. For TFQ, `cirq.GridQubit` is preferred:

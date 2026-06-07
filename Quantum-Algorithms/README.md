@@ -26,7 +26,7 @@ Each algorithm subdirectory contains self-contained learning materials structure
 
 ---
 
-## 2. Quantum Algorithm Cheat Sheet
+## 2. Quantum Algorithm Quick Reference
 
 | Algorithm | Problem Solved | Speedup | Core Trick / Mechanic | Main Bottleneck |
 | :--- | :--- | :---: | :--- | :--- |

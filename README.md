@@ -62,7 +62,7 @@ Quantum-Algorithms/      Algorithm notes, math, circuits, and examples
 quantum_code_lab/        Runnable Python examples and demos
 IBM-Qiskit/              Beginner-friendly Qiskit learning track
 TensorFlow-Quantum/      TensorFlow Quantum beginner track
-credentials/             Course certificates and learning record
+assets/                  Course certificates, images, and learning record
 .github/workflows/       CI checks for Python examples
 ```
 
@@ -153,35 +153,23 @@ Additional sources for India and China: [QpiAI QEC announcement](https://www.qpi
 | Rigetti Cepheus-1-108Q | Rigetti | 108 | Superconducting modular | Chiplet-based scaling via Braket access. | Gate-model research and cloud benchmarking. |
 | Xanadu Aurora | Xanadu | Modular photonic system | Photonic | Networked photonic racks toward fault-tolerant modularity. | Photonic architecture research and continuous-variable methods. |
 
-## Quantum Algorithm Ecosystem Map
+## Quantum Algorithm Ecosystem
 
-```mermaid
-graph TD
-    A[Quantum Computing] --> B[Algorithms]
-    A --> H[Hardware]
-    A --> QML[Quantum Machine Learning]
-    B --> C[Grover]
-    B --> D[Shor]
-    B --> E[Quantum Fourier Transform]
-    B --> F[VQE]
-    B --> G[QAOA]
-    C --> C1[Search optimization]
-    D --> D1[Cryptography breaking]
-    E --> E1[Frequency and phase analysis]
-    F --> F1[Chemistry simulation]
-    G --> G1[Combinatorial optimization]
-    QML --> Q1[Quantum kernels]
-    QML --> Q2[Variational classifiers]
-    QML --> Q3[Hybrid neural networks]
-```
+![Quantum Algorithm Ecosystem Map](assets/q-eco-sys-b.png)
+*Quantum computing algorithm ecosystem map.*
 
-```mermaid
-graph LR
-    State[Prepare state] --> Oracle[Encode problem as oracle]
-    Oracle --> Interference[Interference amplifies useful amplitudes]
-    Interference --> Measure[Measure classical result]
-    Measure --> Validate[Classical validation and post-processing]
-```
+![Quantum Circuit Flow](assets/q-cricuit.png)
+*Quantum circuit execution and computational flow.*
+
+## Reference Guides
+
+### Quantum Computing 
+![Quantum Computing Reference](assets/q-cs.png)
+*Quantum computing gates, operations, and notation reference.*
+
+### Quantum Mechanics 
+![Quantum Mechanics Reference](assets/qm-cs.png)
+*Quantum mechanics postulates, state vectors, and operators reference.*
 
 ## Learning Tracks
 
@@ -308,7 +296,7 @@ This reading list uses source links and short notes so it stays lightweight and 
 
 | Introduction to Quantum Computing | Quantum Mechanics |
 | :---: | :---: |
-| [![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg)](https://www.coursera.org/account/accomplishments/verify/52M7AW2KK7E2) | [![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg)](https://www.coursera.org/account/accomplishments/verify/GQX2FCUMHLZ9) |
+| [![Introduction to Quantum Computing](assets/01_Introduction_to_Quantam_Computing.jpg)](https://www.coursera.org/account/accomplishments/verify/52M7AW2KK7E2) | [![Quantum Mechanics](assets/02_Quantum_Mechanics_page.jpg)](https://www.coursera.org/account/accomplishments/verify/GQX2FCUMHLZ9) |
 | [Verify Credential](https://www.coursera.org/account/accomplishments/verify/52M7AW2KK7E2) | [Verify Credential](https://www.coursera.org/account/accomplishments/verify/GQX2FCUMHLZ9) |
 
 ## License
