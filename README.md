@@ -304,12 +304,12 @@ This reading list uses source links and short notes so it stays lightweight and 
 | Evidence for the Utility of Quantum Computing Before Fault Tolerance | 2023 | NISQ utility | [DOI](https://doi.org/10.1038/s41586-023-06096-3) | IBM error-mitigated experiments arguing for useful pre-fault-tolerant quantum computation. |
 | Logical Quantum Processor Based on Reconfigurable Atom Arrays | 2023 | Neutral atoms/error correction | [DOI](https://doi.org/10.1038/s41586-023-06927-3) | Logical-qubit operations and error-correction primitives with reconfigurable neutral atoms. |
 | Quantum Error Correction Below the Surface Code Threshold | 2024 | Error correction | [DOI](https://doi.org/10.1038/s41586-024-08449-y) | Google Willow result showing improved logical behavior as code distance increases. |
-
 ## Certificates
 
 | Introduction to Quantum Computing | Quantum Mechanics |
 | :---: | :---: |
-| ![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg) | ![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg) |
+| [![Introduction to Quantum Computing](credentials/01_Introduction_to_Quantam_Computing.jpg)](https://www.coursera.org/account/accomplishments/verify/52M7AW2KK7E2) | [![Quantum Mechanics](credentials/02_Quantum_Mechanics_page.jpg)](https://www.coursera.org/account/accomplishments/verify/GQX2FCUMHLZ9) |
+| [Verify Credential](https://www.coursera.org/account/accomplishments/verify/52M7AW2KK7E2) | [Verify Credential](https://www.coursera.org/account/accomplishments/verify/GQX2FCUMHLZ9) |
 
 ## License
 
