@@ -55,13 +55,14 @@ def deutsch_jozsa_circuit(n: int = 3, oracle_type: str = "balanced"):
     return qc
 
 
-def simulate(qc, shots: int = 1024) -> dict:
-    """Simulate using Statevector."""
-    from qiskit.quantum_info import Statevector
+def simulate(qc, n_query: int = 3, shots: int = 1024) -> dict:
+    """Simulate and return counts for the query register only."""
+    from qiskit.quantum_info import Statevector, partial_trace
 
     qc_no_meas = qc.remove_final_measurements(inplace=False)
     sv = Statevector.from_instruction(qc_no_meas)
-    probs = sv.probabilities_dict()
+    rho = partial_trace(sv, [n_query])
+    probs = rho.probabilities_dict()
     return {k: int(v * shots) for k, v in probs.items() if v > 0.001}
 
 

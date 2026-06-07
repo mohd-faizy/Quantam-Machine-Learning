@@ -50,17 +50,20 @@ def bernstein_vazirani_circuit(secret: str = "1011"):
     return qc
 
 
-def simulate(qc, shots: int = 1024) -> dict:
-    """Simulate using Statevector-based approach."""
+def simulate(qc, n_query: int = 4, shots: int = 1024) -> dict:
+    """Simulate and return counts for the query register only."""
     try:
-        from qiskit.quantum_info import Statevector
+        from qiskit.quantum_info import Statevector, partial_trace
     except ImportError as exc:
         raise SystemExit("Qiskit is required.") from exc
 
-    # Remove measurements, get statevector, then sample
+    # Remove measurements, get statevector
     qc_no_meas = qc.remove_final_measurements(inplace=False)
     sv = Statevector.from_instruction(qc_no_meas)
-    probs = sv.probabilities_dict()
+
+    # Trace out the ancilla qubit (last qubit index = n_query)
+    rho = partial_trace(sv, [n_query])
+    probs = rho.probabilities_dict()
     return {k: int(v * shots) for k, v in probs.items() if v > 0.001}
 
 

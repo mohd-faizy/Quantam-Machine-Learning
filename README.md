@@ -32,7 +32,6 @@ credentials/             Course certificates and learning record
 | QML experiments | `quantum_code_lab/` | PennyLane VQC, VQE toy models, TensorFlow classifiers, TFQ circuits, and SymPy math helpers. |
 | Research reading | `README.md#major-quantum-research-papers` | Major papers with direct links and short notes. |
 | Hardware literacy | `README.md#global-quantum-landscape` | Who is building quantum computers, what architecture they use, and what they are trying to prove. |
-```
 
 ## Quantum Companies and 2026 Progress Report
 
