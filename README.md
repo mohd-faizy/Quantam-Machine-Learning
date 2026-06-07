@@ -1,8 +1,8 @@
 # Quantum Computing, Quantum Machine Learning, and Quantum Algorithms
 
-An open, executable learning hub for quantum computing, quantum machine learning (QML), quantum algorithms, hardware progress, and research literacy. The repository is organized as a 2026-ready curriculum: every major algorithm has theory, math, implementation, and visualization material, while the code lab provides runnable examples for `Qiskit`, `PennyLane`, `Cirq`, and hybrid workflows.
+An open, executable learning hub for quantum computing, quantum machine learning (QML), quantum algorithms, hardware progress, and research literacy. Each major algorithm includes theory, math, implementation, and visualization material, while the code lab provides runnable examples for `Qiskit`, `PennyLane`, `Cirq`, TensorFlow Quantum, and hybrid workflows.
 
-## Project Overview
+## Overview
 
 Quantum computing has moved from isolated demonstrations to cloud-accessible processors, error-mitigation workflows, modular hardware roadmaps, and hybrid quantum-classical software stacks. The field is still pre-fault-tolerant for most practical workloads, but the direction is clear: high-quality qubits, better calibration, circuit knitting, quantum error correction, and quantum-centric supercomputing are converging.
 
@@ -13,7 +13,7 @@ Hybrid classical-quantum systems are the dominant near-term pattern. A classical
 ## Repository Map
 
 ```text
-Quantum-Algorithms/      Modular algorithm knowledge base
+Quantum-Algorithms/      Algorithm notes, math, circuits, and examples
 quantum_code_lab/        Runnable Python examples and demos
 credentials/             Course certificates and learning record
 .github/workflows/       CI checks for Python examples
@@ -133,16 +133,16 @@ pip install -r requirements.txt
 
 ## Quantum Machine Learning
 
-QML examples now live where learners expect executable material: inside `quantum_code_lab/`. The repository covers Variational Quantum Circuits, Quantum Neural Networks, quantum feature maps, hybrid training loops, dataset encoding strategies, barren plateaus, noise, and trainability limits through runnable scripts instead of placeholder folders.
+QML examples live in `quantum_code_lab/` so the concepts stay close to runnable code. The repository covers Variational Quantum Circuits, Quantum Neural Networks, quantum feature maps, hybrid training loops, dataset encoding strategies, barren plateaus, noise, and trainability limits through small scripts.
 
 ## Visualization Strategy
 
-Static images are secondary. Prefer:
+Prefer diagrams and plots that can be edited or regenerated:
 
-- Mermaid diagrams in Markdown.
+- Diagrams in Markdown.
 - Qiskit/Cirq/PennyLane circuit drawers.
 - Matplotlib Bloch spheres and measurement histograms.
-- Notebook cells for interactive parameter sweeps.
+- Small scripts for parameter sweeps.
 
 ## Current Limitations
 
@@ -156,7 +156,7 @@ Most examples are small by design so they run on laptops and CI. Hardware tables
 
 ## Major Quantum Research Papers
 
-PDFs are intentionally not stored in this repository. This table keeps the research map lightweight, searchable, and directly linked to source papers.
+This reading list uses source links and short notes so it stays lightweight and easy to maintain.
 
 | Paper | Year | Area | Link | What it contains |
 |---|---:|---|---|---|

@@ -2,7 +2,7 @@
 
 TensorFlow Quantum (TFQ) connects Cirq quantum circuits with TensorFlow/Keras models. In this repository TFQ is part of the unified QML stack.
 
-## Where TFQ Appears
+## Examples
 
 - `../quantum_code_lab/qml_hybrid_model.py`
 - `../quantum_code_lab/tensorflow_quantum_pqc.py`

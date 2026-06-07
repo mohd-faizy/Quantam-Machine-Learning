@@ -1,4 +1,4 @@
-"""Print the Shor period-finding pipeline as a Mermaid graph."""
+"""Print the Shor period-finding pipeline diagram."""
 
 
 def main() -> None:
@@ -13,4 +13,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

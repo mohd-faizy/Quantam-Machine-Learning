@@ -1,6 +1,6 @@
 # Credentials
 
-This folder tracks course certificates, including their images and learning milestones, without mixing them into the research/code sections.
+Course certificates and learning milestones live here, separate from the research notes and code examples.
 
 ## Contents
 
@@ -9,4 +9,3 @@ This folder tracks course certificates, including their images and learning mile
 ## Maintenance
 
 Keep certificates as images only when redistribution is permitted. Add a short description, issuer, completion date, and skill mapping for each credential.
-

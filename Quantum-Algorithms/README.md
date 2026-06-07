@@ -1,6 +1,6 @@
 # Quantum Algorithms Handbook
 
-This folder is the algorithm knowledge system for the repository. It replaces PDF/wiki dumps with a structured, searchable, executable guide to quantum algorithms: what each algorithm solves, why it works, what math it uses, where the speedup comes from, and where the limitations are.
+Main reference for quantum algorithms in the repository: core ideas, equations, tradeoffs, and runnable examples in one place.
 
 Each algorithm module contains:
 
@@ -646,7 +646,7 @@ Shor is asymptotically powerful, but RSA-scale factoring needs fault-tolerant lo
 - You are building hybrid QML pipelines with TensorFlow.
 - You want `tfq.layers.PQC` style parameterized quantum layers.
 
-## Mermaid Overview
+## Overview
 
 ```mermaid
 graph LR
@@ -670,4 +670,3 @@ For runnable examples across frameworks, use:
 ```text
 ../quantum_code_lab/
 ```
-
