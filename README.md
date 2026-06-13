@@ -174,16 +174,16 @@ Additional sources for India and China: [QpiAI QEC announcement](https://www.qpi
 
 ## Modules
 
-| Module | Focus |
-|---|---|
-| [Grover](Quantum-Algorithms/grover_algorithm/README.md) | Amplitude amplification for unstructured search. |
-| [Shor](Quantum-Algorithms/shor_algorithm/README.md) | Period finding and integer factorization. |
-| [Deutsch-Jozsa](Quantum-Algorithms/deutsch_jozsa/README.md) | Constant vs balanced oracle separation. |
-| [Bernstein-Vazirani](Quantum-Algorithms/bernstein_vazirani/README.md) | Hidden bit-string recovery. |
-| [Simon](Quantum-Algorithms/simon_algorithm/README.md) | Hidden XOR mask and period structure. |
-| [Quantum Fourier Transform](Quantum-Algorithms/quantum_fourier_transform/README.md) | Fourier analysis over computational basis states. |
-| [Quantum Teleportation](Quantum-Algorithms/quantum_teleportation/README.md) | Entanglement-assisted state transfer. |
-| [Entanglement](Quantum-Algorithms/entanglement/README.md) | Bell states, correlations, and nonclassical resources. |
+| Module | Focus | Circuit Diagram |
+|---|---|---|
+| **[Grover](Quantum-Algorithms/grover_algorithm/README.md)** | Amplitude amplification for unstructured search. | <img src="Quantum-Algorithms/_img/Grovers-Algorithm/gv_02.png" alt="Grover Circuit" width="320"> |
+| **[Shor](Quantum-Algorithms/shor_algorithm/README.md)** | Period finding and integer factorization. | <img src="Quantum-Algorithms/_img/Shors-Algorithm/sh_02.png" alt="Shor Circuit" width="320"> |
+| **[Deutsch-Jozsa](Quantum-Algorithms/deutsch_jozsa/README.md)** | Constant vs balanced oracle separation. | <img src="Quantum-Algorithms/_img/Deutsch-Jozsa/dj_02.png" alt="Deutsch-Jozsa Circuit" width="320"> |
+| **[Bernstein-Vazirani](Quantum-Algorithms/bernstein_vazirani/README.md)** | Hidden bit-string recovery. | <img src="Quantum-Algorithms/_img/Bernstein–Vazirani/bv_02.png" alt="Bernstein-Vazirani Circuit" width="320"> |
+| **[Simon](Quantum-Algorithms/simon_algorithm/README.md)** | Hidden XOR mask and period structure. | <img src="Quantum-Algorithms/_img/Simon-Algorithm/sim_02.png" alt="Simon Circuit" width="320"> |
+| **[Quantum Fourier Transform](Quantum-Algorithms/quantum_fourier_transform/README.md)** | Fourier analysis over computational basis states. | <img src="Quantum-Algorithms/_img/Quantum-Fourier-Transform/qft_02.png" alt="QFT Circuit" width="320"> |
+| **[Quantum Teleportation](Quantum-Algorithms/quantum_teleportation/README.md)** | Entanglement-assisted state transfer. | <img src="Quantum-Algorithms/_img/Quantum-Teleportation/qt_02.png" alt="Teleportation Circuit" width="320"> |
+| **[Entanglement](Quantum-Algorithms/entanglement/README.md)** | Bell states, correlations, and nonclassical resources. | <img src="Quantum-Algorithms/_img/Quantum-Entanglement/qen_02.png" alt="Entanglement Circuit" width="320"> |
 
 ## Code Base
 
