@@ -4,13 +4,13 @@ matplotlib
 sympy
 
 # Quantum SDKs (Modern API Compatible)
-qiskit>=2.0.0
-pennylane>=0.39.0
+qiskit
+pennylane
 cirq
 
 # TensorFlow Quantum stack (requires Python 3.10-3.12)
-tensorflow==2.18.1
-tensorflow-quantum==0.7.6
+tensorflow
+tensorflow-quantum
 
 # PyTorch Quantum simulation stack
 torch
