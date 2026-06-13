@@ -5,6 +5,7 @@ sympy
 
 # Quantum SDKs (Modern API Compatible)
 qiskit
+qiskit-aer
 pennylane
 cirq
 
